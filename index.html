@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: middle;
+        }
+
+        .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1200px;
+            }
+
+            .mr_0 {
+                margin-right: 0px !important;
+            }
+        }
+
+        .container-fluid {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        input:focus {
+            outline: -webkit-focus-ring-color auto 0px;
+            outline-offset: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            vertical-align: middle;
+            border: 0;
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* 外层最大的唯一父级div */
+        .index {
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .top {
+            width: 100%;
+            min-width: 1200px !important;
+            background: #f5f5f5;
+            height: 36px;
+            border-bottom: 1px solid #ddd;
+            font-size: 12px;
+        }
+
+        .top>div {
+            display: flex;
+            width: 1200px;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .top a {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .top a:hover {
+            color: #f83244;
+        }
+
+        .top_dingwei {
+            display: inline-block;
+            padding-top: -10px;
+            width: 15px;
+            height: 30px;
+            background: url(public/carousel-images/hljicon.png) no-repeat -40px 10px;
+            background-size: 500px;
+        }
+
+        .top_iphone {
+            display: inline-block;
+            width: 15px;
+            height: 30px;
+            background: url(public/carousel-images/hljicon.png) no-repeat 5px 8px;
+            background-size: 500px;
+        }
+
+        .qiehuan {
+            color: #f83244 !important;
+            margin-right: 20px;
+        }
+
+        .top_last_div>a {
+            margin: 0 10px;
+        }
+
+        /* 第二层 */
+        .top2 {
+            margin-top: 30px;
+        }
+
+        .top2_one {
+            display: flex;
+            width: 1200px;
+            justify-content: space-between;
+        }
+
+        .top2_input {
+            width: 453px;
+            height: 36px;
+            line-height: 38px;
+            border: 1px solid #ff5165;
+            color: #333;
+            float: left;
+            font-style: normal;
+            text-indent: 5px;
+            padding-left: 10px;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+        }
+
+        .top_one_first_div img {
+            width: 92px;
+            height: 44px;
+        }
+
+        .top_btn {
+            width: 80px;
+            height: 40px;
+            background: #f83244;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .top2 .h3 {
+            font-size: 20px;
+            color: #f83244;
+            font-weight: bold;
+            margin-top: 10px;
+            line-height: 20px;
+        }
+
+        .top2 .h2 {
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+            text-align: right;
+        }
+
+        .top2_div2 {
+            width: 550px;
+        }
+
+        .top2_two>ul {
+            display: flex;
+            margin-left: -10px;
+        }
+
+        .top2_two>ul>li {
+            margin: 0 10px;
+        }
+
+        .top2_two>ul>li>a {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .top2_two>ul>li>a:hover {
+            color: #f83244;
+        }
+
+        /* 第三层 */
+        .top3 {
+            width: 100%;
+            height: 44px;
+            background: #f83244;
+            position: relative;
+            margin-top: 12px;
+            z-index: 99;
+            margin-top: 21px;
+            min-width: 1200px;
+        }
+
+        .top3_div>ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top3_div>ul>li {
+            line-height: 44px;
+            width: 124px;
+            height: 44px;
+            text-align: center;
+        }
+
+        .top3_div>ul>li:hover {
+            background: rgba(0, 0, 0, .3)
+        }
+
+        .top3_div>ul>li>a {
+            color: #FFFFFF;
+        }
+
+        .top3_div>ul>li:nth-child(2)>a {
+            display: inline-block;
+            width: 134px !important;
+        }
+
+        .top3 .hot {
+            margin-left: -10px;
+            width: 10px;
+            height: 44px;
+            background: url(public/images/hot.png) no-repeat 100px 0px;
+        }
+
+        .top3 .active {
+            background: rgba(0, 0, 0, .3)
+        }
+
+        /* 第四层面包屑导航 */
+        .top4 {
+            margin-top: 15px;
+            min-width: 1200px;
+        }
+
+        .top4>ul {
+            display: flex;
+        }
+
+        .top4>ul>li[class=breadcrumb]::before {
+            content: "|";
+            margin: 0 10px;
+            color: #666666;
+        }
+
+        .top4>ul>li>a {
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .top4>ul>li>a:hover {
+            color: #f83244;
+        }
+
+        .active2 {
+            color: red !important;
+        }
+
+        /* 第五层轮播图 */
+        .body1 {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .body1 em {
+            font-size: 14px;
+            color: #f83244;
+        }
+
+        .body1>.carousel_title,
+        .body2 .title2 {
+            width: 100%;
+            line-height: 70px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .body1>.carousel_content {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .body1>.carousel_content>ul {
+            width: 280px;
+            height: 240px;
+            border: 1px solid #e7e7e7;
+            float: left;
+            margin-right: 24px;
+        }
+
+        .body1 .carousel_text {
+            width: 92%;
+            margin: 0 4%;
+            line-height: 36px;
+            font-size: 14px;
+            margin-top: 5px;
+            color: #333;
+            height: 36px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .body1 .carousel_price {
+            text-align: center;
+        }
+
+        .body1 .carousel_price_span1 {
+            font-size: 24px;
+            color: #f83244;
+        }
+
+        .body1 .carousel_price_s {
+            font-size: 12px;
+            color: #999;
+            margin-left: 10px;
+            display: inline-block;
+            margin-top: 6px;
+        }
+
+        .body1 .carousel_img_shadow>img:hover {
+            opacity: 0.8;
+        }
+
+        .body1 .carousel_prev {
+            width: 30px;
+            height: 60px;
+            background: url(public/carousel-images/hljicon.png) no-repeat 0px -45px;
+            position: absolute;
+            top: 33%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .body1 .carousel_next {
+            width: 30px;
+            height: 60px;
+            background: url(public/carousel-images/hljicon.png) no-repeat -37px -45px;
+            position: absolute;
+            top: 33%;
+            right: 0px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* 第六层个性自选 */
+
+        .body2_content {
+            border: 1px solid #e7e7e7;
+        }
+
+        .body2>div>div:first-child>ul {
+            display: flex;
+        }
+
+        .body2>div>div:last-child>ul {
+            display: flex;
+        }
+
+        .body2 a {
+            height: 22px;
+            line-height: 22px;
+            margin: 11px 11px 0 11px;
+            border: 1px solid #fff;
+            color: #666;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .body2 a:hover {
+            border-color: #ff705e;
+            border-radius: 5px;
+            color: #ff705e;
+        }
+
+        .body2_text {
+            display: block;
+            width: 50px;
+            line-height: 46px;
+            color: #999;
+        }
+
+        .body2 ul {
+            margin-left: 21px;
+        }
+
+        .body2 ul:first-child {
+            width: 1150px;
+            border-bottom: 1px dashed #e7e7e7;
+        }
+
+        .body2 li {
+            line-height: 46px;
+        }
+
+        .active3 {
+            border-color: #ff705e !important;
+            border-radius: 5px !important;
+            color: #ff705e !important;
+        }
+
+        /* 第六层排序标签 */
+        .body2_sort {
+            border: 1px solid #e7e7e7;
+            background: #f8f8f8;
+            height: 38px;
+            margin-top: 20px;
+        }
+
+        .body2_sort>ul {
+            display: flex;
+            margin-left: 21px;
+        }
+
+        .body2_sort>ul>li>a {
+            display: inline-block;
+            width: 94px;
+            margin-top: 12px;
+            color: #666;
+        }
+
+        .body2_sort>ul>li>a:hover {
+            color: #ff705e;
+        }
+
+        .active4 {
+            color: #ff705e !important;
+        }
+
+        /* 第六层内容 */
+        .body3_div {
+            display: flex;
+            margin-top: 20px;
+            width: 280px;
+            border: 1px solid #e7e7e7;
+            float: left;
+            margin-right: 24px;
+        }
+
+        .body3_text {
+            width: 92%;
+            margin: 0 4%;
+            line-height: 36px;
+            font-size: 14px;
+            margin-top: 5px;
+            color: #333;
+            height: 36px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .body3_price_span {
+            font-size: 18px;
+            color: #f83244;
+            margin: 0 4%;
+        }
+
+        .body3_price_span>em {
+            font-size: 14px;
+            color: #f83244;
+        }
+
+        .body3_s {
+            font-size: 12px;
+            color: #999;
+            margin-left: -5px;
+            display: inline-block;
+        }
+
+        .body3 img:hover {
+            opacity: 0.8;
+        }
+
+        /* 第六层分页按钮 */
+        .lastbody {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            min-width: 1200px;
+        }
+
+        .lastbody>a {
+            display: block;
+            color: #666;
+            width: 78px;
+            height: 36px;
+            line-height: 36px;
+            color: #666;
+            border: 1px solid #e8e8e8;
+            margin: 0 3px;
+        }
+
+        .lastbody>a:hover {
+            color: #f83244;
+        }
+
+        .lastbody>.number {
+            display: block;
+            color: #666;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            color: #666;
+            border: 1px solid #e8e8e8;
+            margin: 0 3px;
+            text-align: center;
+        }
+
+        .active5 {
+            background-color: #f83244 !important;
+            color: #FFFFFF !important;
+        }
+
+        /* 第七层底部样式一 */
+        .footer {
+            position: relative;
+            background: #222;
+            color: #fff;
+            font-family: 'Microsoft YaHei';
+            overflow: visible;
+            min-width: 1200px;
+        }
+
+        .footer_h4 {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 44px;
+            text-align: center;
+        }
+
+        .footer_h4_2 {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 44px;
+        }
+
+        .footer_div a {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .footer_div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 255px;
+        }
+
+        .footer_div_flex {
+            display: flex;
+            justify-content: space-between;
+            width: 150px;
+        }
+
+        .footer_ul_2>li {
+            width: 150px;
+            margin: 5px 0;
+            margin-left: 39px;
+        }
+
+        .footer_ul>li {
+            margin: 5px 0;
+        }
+
+        .footer_five_ul {
+            height: 178px;
+        }
+
+        .my_footer_img1 {
+            text-align: center;
+        }
+
+        .my_footer_img2 img {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            margin-top: 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .weixin {
+            text-decoration: none !important;
+        }
+
+        .xuanting1 {
+            position: absolute;
+            top: 230px;
+            width: 204px;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 6px 10px 6px 6px;
+            font-size: 14px;
+            color: #333;
+            line-height: 22px;
+            display: none;
+            z-index: 999;
+        }
+
+        .xuanting1 img {
+            width: 84px;
+            height: 84px;
+            margin-right: 8px;
+        }
+
+        .xuanting2 {
+            position: absolute;
+            top: 230px;
+            width: 204px;
+            height: 84px;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 6px 10px 6px 6px;
+            font-size: 14px;
+            color: #333;
+            line-height: 22px;
+            z-index: 999;
+            display: none;
+        }
+
+        .xuanting2 img {
+            width: 84px;
+            height: 84px;
+            margin-right: 8px;
+        }
+
+        .weixin:hover>.xuanting1 {
+            display: block;
+            display: flex;
+        }
+
+        .sina:hover>.xuanting2 {
+            display: block;
+            display: flex;
+        }
+
+        /* 第七层底部样式2 */
+        .footer2 {
+            height: 101.16px;
+            background: #1a1a1a;
+            color: #ccc;
+            font-size: 12px;
+            text-align: center;
+            line-height: 30px;
+            display: flex;
+            align-items: center;
+            min-width: 1200px;
+        }
+
+        .footer_p1 {
+            font-size: 0px;
+        }
+
+        .footer2 a {
+            color: #ccc;
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 12px;
+        }
+
+        .footer2_span1 {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .footer2_span2 {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /* 切换悬停! */
+        .qiehuan1 {
+            position: relative;
+            margin-right: 30px;
+        }
+
+        .qiehuan {
+            width: 500px;
+            min-height: 350px;
+            border: 1px solid #e7e7e7;
+            z-index: 999;
+            position: absolute;
+            top: 30px;
+            background: #fff;
+            padding: 0px 15px;
+            margin-top: -1px;
+            font-size: 14px;
+            display: none;
+        }
+
+
+        .qiehuan1:hover>.qiehuan {
+            display: block;
+        }
+
+        #xuanting_div {
+            position: absolute;
+            top: 14px;
+            left: 0;
+            width: 30px;
+            height: 15px;
+            background: #F5F5F5;
+        }
+
+        .qiehuan_ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        .qiehuan_ul li {
+            margin: 15px 15px;
+        }
+
+        .qiehuan_ul li>a {
+            font-size: 14px;
+        }
+
+        .qiehuan .quanguo>a {
+            display: block;
+            margin: 10px 0 10px 35px;
+            font-size: 14px;
+        }
+
+        .qiehuan_span1 {
+            color: #666666;
+            display: block;
+            padding: 15px 0 0 35px;
+            border-top: 1px dashed #666666;
+        }
+
+        .qiehuan_span2 {
+            color: #666666;
+            display: block;
+            padding: 15px 0 15px 35px;
+            border-top: 1px dashed #666666;
+        }
+
+        .qiehuan_span2>a {
+            font-size: 14px;
+        }
+
+        /* 手机悬停! */
+        .appiphone {
+            position: relative;
+        }
+
+        .appiphone:hover .iphonext {
+            display: block;
+        }
+
+        #xuanting2 {
+            width: 50px;
+            height: 12px;
+            position: absolute;
+            top: 15px;
+            left: -12px;
+            background: #F5F5F5;
+        }
+
+        .iphonext {
+            position: absolute;
+            top: 27px;
+            left: -15px;
+            display: none;
+            z-index: 999;
+        }
+
+        /* 电梯导航! */
+        .elevator {
+            position: fixed;
+            top: 50%;
+            right: 1px;
+            transform: translateY(-50%);
+        }
+
+        .elevator_div1 {
+            width: 56px;
+            height: 76px;
+            background: #222222;
+            text-align: center;
+        }
+
+        .elevator_div1 p {
+            margin: 0 15px;
+            line-height: 16px;
+            margin-top: 5px;
+            display: block;
+            font-size: 12px;
+            color: #fff;
+        }
+
+        .elevator_div1 img {
+            margin-top: 10px;
+        }
+
+        .elevator_div2 {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            background-color: #222222;
+            text-align: center;
+            margin-top: 3px;
+        }
+
+        .elevator_div2 img {
+            margin-top: 18px;
+        }
+
+        .elevator_div3 {
+            width: 56px;
+            height: 56px;
+            background-color: #222222;
+            text-align: center;
+            margin-top: 3px;
+        }
+
+        .elevator_div3 img {
+            margin-top: 18px;
+        }
+
+        .elevator_div1:hover {
+            background: #393939;
+        }
+
+        .elevator_div2:hover {
+            background: #393939;
+        }
+
+        .elevator_div3:hover {
+            background: #393939;
+        }
+
+        .dianti_xuanting_img {
+            position: absolute;
+            top: -27px;
+            right: 60px;
+            display: none;
+            z-index: 999;
+        }
+
+        .elevator_div2:hover .dianti_xuanting_img{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="index">
+        <!-- 一层 -->
+        <div class="top">
+            <div class="container">
+                <div class="top_frist_div">
+                    <span class="top_dingwei"></span>
+                    <span>西安</span>
+                    <span class="qiehuan1">
+                        [切换]
+                        <div id="xuanting_div"></div>
+                        <div class="qiehuan">
+                            <div class="qiehuan_div">
+                                <ul class="quanguo"><a href="javascript:;">全国</a></ul>
+                                <span class="qiehuan_span1">热门城市</span>
+                                <div class="qiehuan_ul">
+                                    <ul>
+                                        <li><a href="javascript:;">南通</a></li>
+                                        <li><a href="javascript:;">成都</a></li>
+                                        <li><a href="javascript:;">厦门</a></li>
+                                        <li><a href="javascript:;">沈阳</a></li>
+                                        <li><a href="javascript:;">东莞</a></li>
+                                        <li><a href="javascript:;">洛阳</a></li>
+                                        <li><a href="javascript:;">济南</a></li>
+                                        <li><a href="javascript:;">兰州</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:;">长春</a></li>
+                                        <li><a href="javascript:;">广州</a></li>
+                                        <li><a href="javascript:;">三亚</a></li>
+                                        <li><a href="javascript:;">昆明</a></li>
+                                        <li><a href="javascript:;">海口</a></li>
+                                        <li><a href="javascript:;">南昌</a></li>
+                                        <li><a href="javascript:;">金华</a></li>
+                                        <li><a href="javascript:;">贵阳</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:;">杭州</a></li>
+                                        <li><a href="javascript:;">武汉</a></li>
+                                        <li><a href="javascript:;">长沙</a></li>
+                                        <li><a href="javascript:;">合肥</a></li>
+                                        <li><a href="javascript:;">南宁</a></li>
+                                        <li><a href="javascript:;">呼和浩特</a></li>
+                                        <li><a href="javascript:;">义乌</a></li>
+                                        <li><a href="javascript:;">乌鲁木齐</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:;">北京</a></li>
+                                        <li><a href="javascript:;">南京</a></li>
+                                        <li><a href="javascript:;">郑州</a></li>
+                                        <li><a href="javascript:;">大连</a></li>
+                                        <li><a href="javascript:;">中山</a></li>
+                                        <li><a href="javascript:;">太原</a></li>
+                                        <li><a href="javascript:;">温州</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:;">上海</a></li>
+                                        <li><a href="javascript:;">重庆</a></li>
+                                        <li><a href="javascript:;">青岛</a></li>
+                                        <li><a href="javascript:;">佛山</a></li>
+                                        <li><a href="javascript:;">五指山</a></li>
+                                        <li><a href="javascript:;">石家庄</a></li>
+                                        <li><a href="javascript:;">嘉兴</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:;">深圳</a></li>
+                                        <li><a href="javascript:;">苏州</a></li>
+                                        <li><a href="javascript:;">丽江</a></li>
+                                        <li><a href="javascript:;">宁波</a></li>
+                                        <li><a href="javascript:;">常州</a></li>
+                                        <li><a href="javascript:;">绵阳</a></li>
+                                        <li><a href="javascript:;">徐州</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="javascript:;">西安</a></li>
+                                        <li><a href="javascript:;">天津</a></li>
+                                        <li><a href="javascript:;">大理</a></li>
+                                        <li><a href="javascript:;">哈尔滨</a></li>
+                                        <li><a href="javascript:;">无锡</a></li>
+                                        <li><a href="javascript:;">福州</a></li>
+                                    </ul>
+                                </div>
+                                <span class="qiehuan_span2"><a href="javascript:;"></a>全部城市></a></span>
+                            </div>
+                        </div>
+                    </span>
+                    <a href="javascript:;">
+                        <span class="top_iphone"></span>
+                        <span class="appiphone">
+                            手机版
+                            <div id="xuanting2"></div>
+                            <div class="iphonext">
+                                <img src="public/footer-images/APPerweima1.png" alt="">
+                            </div>
+                        </span>
+                    </a>
+                </div>
+                <div class="top_last_div">
+                    <a href="javascript:;">登录</a>
+                    <a href="javascript:;">海草云 SaaS</a>
+                    <a href="javascript:;">商家中心</a>
+                    <a href="javascript:;">平台规则</a>
+                </div>
+            </div>
+        </div>
+        <!-- 二层 -->
+        <div class="top2">
+            <div class="top2_one container">
+                <div class="top_one_first_div">
+                    <a href="javascript:;">
+                        <img src="public/carousel-images/hlj.jpg" alt="">
+                    </a>
+                </div>
+                <div class="top2_div2">
+                    <input class="top2_input" type="text" placeholder="搜索商家、套餐、话题">
+                    <button class="top_btn">搜索</button>
+                    <div class="top2_two">
+                        <ul>
+                            <li><a href="javascript:;">中式婚礼</a></li>
+                            <li><a href="javascript:;">草坪婚礼</a></li>
+                            <li><a href="javascript:;">蒂芙尼蓝</a></li>
+                            <li><a href="javascript:;">森系婚礼</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="h2">婚礼纪客服热线</h2>
+                    <h3 class="h3">400-159-9090</h3>
+                </div>
+            </div>
+        </div>
+        <!-- 三层 -->
+        <div class="container-fluid top3">
+            <div class="container top3_div">
+                <ul>
+                    <li class="active"><a href="javascript:;">首页</a></li>
+                    <li><a class="hot" href="javascript:;">结婚请柬</a></li>
+                    <li><a href="javascript:;">婚宴酒店</a></li>
+                    <li><a href="javascript:;">结婚商城</a></li>
+                    <li><a href="javascript:;">婚品采购</a></li>
+                    <li><a href="javascript:;">新娘说</a></li>
+                    <li><a href="javascript:;">结婚攻略</a></li>
+                    <li><a href="javascript:;">婚礼问答</a></li>
+                    <li>
+                        <a href="javascript:;">婚礼美图</a>
+                        <img src="public/images/7.png" alt="">
+                    </li>
+                    <li><a href="javascript:;">婚礼时光</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 四层 -->
+        <div class="top4 container">
+            <ul>
+                <li><span>服装分类：</span></a></li>
+                <li><a class="dianji" href="javascript:;">婚礼策划</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">婚纱摄影</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">婚礼摄影</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">婚礼摄像</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">婚礼跟妆</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">婚礼司仪</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">婚礼纱服</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">婚宴酒店</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji" href="javascript:;">花艺甜品</a></li>
+                <li class="breadcrumb"></li>
+                <li><a href="javascript:;">婚戒首饰</a></li>
+                <li class="breadcrumb"></li>
+                <li><a class="dianji active2" href="javascript:;">婚车租赁</a></li>
+            </ul>
+        </div>
+        <!-- 五层轮播图 -->
+        <div class="body1 container">
+            <h2 class="carousel_title">精选套餐</h2>
+            <div class="carousel_content">
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <div class="carousel_img_shadow"><img src="public/carousel-images/banner1.jpg" alt=""></div>
+                        <li class="carousel_text">【宾利】飞驰/1辆 + 【奥迪】A6L*5辆</li>
+                        <li class="carousel_price">
+                            <span class="carousel_price_span1">
+                                <em>¥</em>
+                                4000.00
+                            </span>
+                            <s class="carousel_price_s">7200.00</s>
+                        </li>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="carousel_prev"></div>
+            <div class="carousel_next"></div>
+        </div>
+        <!-- 第六层匹配查询标签 -->
+        <div class="body2 container">
+            <h2 class="title2">个性自选</h2>
+            <div class="body2_content">
+                <div class="body2_div1">
+                    <ul>
+                        <li class="body2_text">类型：</li>
+                        <li><a class="active3" href="javascript:;">全部</a></li>
+                        <li><a href="javascript:;">顶级豪车</a></li>
+                        <li><a href="javascript:;">高端轿车</a></li>
+                        <li><a href="javascript:;">跑车</a></li>
+                        <li><a href="javascript:;">加长</a></li>
+                        <li><a href="javascript:;">敞篷</a></li>
+                        <li><a href="javascript:;">SUV商务</a></li>
+                        <li><a href="javascript:;">商务客车</a></li>
+                    </ul>
+                </div>
+                <div class="body2_div2">
+                    <ul>
+                        <li class="body2_text">颜色：</li>
+                        <li><a class="active3" href="javascript:;">全部</a></li>
+                        <li><a href="javascript:;">灰色</a></li>
+                        <li><a href="javascript:;">白色</a></li>
+                        <li><a href="javascript:;">红色</a></li>
+                        <li><a href="javascript:;">香槟色</a></li>
+                        <li><a href="javascript:;">鱼子酱</a></li>
+                        <li><a href="javascript:;">黑色</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 第六层排序标签 -->
+        <div class="body2_sort container">
+            <ul>
+                <li><a class="active4" href="javascript:;">智能排序</a></li>
+                <li><a href="javascript:;">低价优先</a></li>
+                <li><a href="javascript:;">高价优先</a></li>
+            </ul>
+        </div>
+        <!-- 第六层内容 -->
+        <div class="body3 container">
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div mr_0">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div mr_0">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="body3_div mr_0">
+                <ul class="body3_ul">
+                    <img src="public/header-images/25.jpg" alt="">
+                    <li class="body3_text">【宾利】飞驰/1辆</li>
+                    <li class="body3_price">
+                        <span class="body3_price_span">
+                            <em>¥</em>
+                            2000.00
+                        </span>
+                        <s style="margin-top: 4px;" class="body3_s">¥2500.00</s>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 第六层分页按钮 -->
+        <div class="lastbody container">
+            <a href="javascript:;" class="prev_page" style="display: none;">
+                <上一页< /a>
+                    <a href="javascript:;" class="number active5" data-toggle="1">1</a>
+                    <a href="javascript:;" class="number" data-toggle="2">2</a>
+                    <a href="javascript:;" class="number"data-toggle="3">3</a>
+                    <a href="javascript:;" class="next_page">下一页></a>
+                    <button class="lastbody_btn1">跳转</button> <span> 第 <input type="text" class="lastbody_btn1"> 页 </span>
+        </div>
+        <!-- 第七层底部样式 -->
+        <div class="footer container-fluid">
+            <div class="container footer_div">
+                <div>
+                    <h4 class="footer_h4">婚庆服务</h4>
+                    <div class="footer_div_flex">
+                        <ul class="footer_ul">
+                            <li><a href="javascript:;">婚宴酒店</a></li>
+                            <li><a href="javascript:;">婚礼策划</a></li>
+                            <li><a href="javascript:;">婚礼司仪</a></li>
+                            <li><a href="javascript:;">婚礼摄影</a></li>
+                            <li><a href="javascript:;">婚礼跟妆</a></li>
+                        </ul>
+                        <ul class="footer_ul">
+                            <li><a href="javascript:;">旅拍精选</a></li>
+                            <li><a href="javascript:;">婚纱摄影</a></li>
+                            <li><a href="javascript:;">婚纱礼服</a></li>
+                            <li><a href="javascript:;">婚礼跟拍</a></li>
+                            <li><a href="javascript:;">婚车租聘</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer_h4">婚品采购</h4>
+                    <div class="footer_div_flex">
+                        <ul class="footer_ul">
+                            <li><a href="javascript:;">新娘礼服</a></li>
+                            <li><a href="javascript:;">喜糖请柬</a></li>
+                            <li><a href="javascript:;">婚礼司仪</a></li>
+                            <li><a href="javascript:;">迎亲堵门</a></li>
+                            <li><a href="javascript:;">新娘美护</a></li>
+                        </ul>
+                        <ul class="footer_ul">
+                            <li><a href="javascript:;">婚房布置</a></li>
+                            <li><a href="javascript:;">鞋包内衣</a></li>
+                            <li><a href="javascript:;">婚嫁购置</a></li>
+                            <li><a href="javascript:;">婚宴现场</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer_h4">社区·攻略</h4>
+                    <div class="footer_div_flex">
+                        <ul class="footer_ul">
+                            <li><a href="javascript:;">新娘说</a></li>
+                            <li><a href="javascript:;">婚前事宜</a></li>
+                            <li><a href="javascript:;">婚庆防坑</a></li>
+                            <li><a href="javascript:;">新郎新娘</a></li>
+                            <li><a href="javascript:;">结婚用品</a></li>
+                        </ul>
+                        <ul class="footer_ul">
+                            <li><a href="javascript:;">结婚问答</a></li>
+                            <li><a href="javascript:;">拍婚纱照</a></li>
+                            <li><a href="javascript:;">婚礼布置</a></li>
+                            <li><a href="javascript:;">结婚邀请</a></li>
+                            <li><a href="javascript:;">婚礼时光</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer_h4">结婚工具</h4>
+                    <div class="footer_div_flex">
+                        <ul class="footer_ul_2">
+                            <li><a href="javascript:;">电子请帖</a></li>
+                            <li><a href="javascript:;">婚礼MV</a></li>
+                            <li><a href="javascript:;">婚礼现场</a></li>
+                            <li><a href="javascript:;">结婚吉日</a></li>
+                            <li><a href="javascript:;">结婚登记处</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_five_ul">
+                    <h4 class="footer_h4">关于我们</h4>
+                    <div class="footer_div_flex">
+                        <ul class="footer_ul_2">
+                            <li><a href="javascript:;">品牌介绍</a></li>
+                            <li><a href="javascript:;">联系我们</a></li>
+                            <li><a href="javascript:;">婚礼纪招聘</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer_five_ul">
+                    <h4 class="footer_h4">婚礼纪APP</h4>
+                    <ul>
+                        <li class="my_footer_img1"><img src="public/footer-images/APPerweima1.png" alt=""></li>
+                        <li class="my_footer_img2">
+                            <a class="weixin" href="javascript:;">
+                                <img src="public/footer-images/weixin.png" alt="">
+                                <div class="xuanting1">
+                                    <img src="public/footer-images/weixinerweima.png" alt="">
+                                    <div class="xuanting_text">
+                                        <p>扫码关注</p>
+                                        <p>婚礼纪微信公众号</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="sina" href="javascript:;">
+                                <img src="public/footer-images/sina.png" alt="">
+                                <div class="xuanting2">
+                                    <img src="public/footer-images/sinaerweima.png" alt="">
+                                    <div class="xuanting_text">
+                                        <p>关注微博</p>
+                                        <p>@婚礼纪</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 第七层底部样式2 -->
+        <div class="footer2 container-fluid">
+            <div class="container">
+                <p class="footer_p1">
+                    <a href="javascript:;">浙ICP备13004478号 © 杭州火烧云科技有限公司</a>
+                    <a href="javascript:;">
+                        <span class="footer2_span1">浙公安备案号：33010602006591</span>
+                        <img src="public/footer-images/beian.png" alt="">
+                    </a>
+                </p>
+                <p class="footer_p2">
+                    <span class="footer2_span2">通讯地址：浙江省杭州市西湖区文一西路98号数娱大厦408</span>
+                    <span class="footer2_span3">客服热线：400-159-9090</span>
+                    <a href="javascript:;">经营执照</a>
+                </p>
+            </div>
+        </div>
+        <!-- 右侧电梯! -->
+        <div class="elevator">
+            <div class="elevator_div1">
+                <a href="javascript:;">
+                    <img src="public/footer-images/erji.png" alt="">
+                    <p>咨询商家</p>
+                </a>
+            </div>
+            <div class="elevator_div2">
+                <a href="javascript:;">
+                    <img src="public/footer-images/diantierweima1.png" alt="">
+                </a>
+                <div class="dianti_xuanting_img">
+                    <img src="public/footer-images/diantierweima2.png" alt="">
+                </div>
+            </div>
+            <div class="elevator_div3">
+                <a href="#">
+                    <img id="gotoTop" src="public/footer-images/jiantou.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 第三层动态添加active类名
+        var lis = document.querySelectorAll(".top3 li");
+        // 循环遍历找到的每个li
+        for (var key of lis) {
+            key.onclick = function () {
+                // 找到所有没有active类的li
+                var liAll = document.querySelectorAll(".top3 li:not([class=active])");
+                // console.log(liAll)
+                var lis = document.querySelectorAll(".top3 li");
+                // console.log(lis);
+                for (var key1 of lis) {
+                    key1.className = "";
+                    // console.log(key1);
+                    if (this.className != "active") {
+                        // console.log(111);
+                        this.className = "active";
+                    }
+                }
+            }
+        }
+
+        //第四层动态添加a标签的点击事件颜色    
+        let as = document.querySelectorAll(".top4 a");
+        // console.log(as);
+        for (let key of as) {
+            key.onclick = () => {
+                let as1 = document.querySelectorAll(".top4 a");
+                for (let key1 of as1) {
+                    key1.className = "";
+                    key.className = "active2";
+                }
+            }
+        }
+        // 第五层轮播图---待定
+
+        // 第六层个性自选动态添加class类---第一行
+        let as2 = document.querySelectorAll(".body2 .body2_div1 a");
+        // console.log(as2);
+        for (let key of as2) {
+            key.onclick = () => {
+                let as3 = document.querySelectorAll(".body2 .body2_div1 a");
+                // console.log(as3);
+                for (let key1 of as3) {
+                    key1.className = "";
+                    key.className = "active3";
+                }
+            }
+        }
+
+        // 第六层个性自选动态添加class类---第二行
+        let as5 = document.querySelectorAll(".body2 .body2_div2 a");
+        // console.log(as5);
+        for (let key of as5) {
+            key.onclick = () => {
+                let as6 = document.querySelectorAll(".body2 .body2_div2 a");
+                // console.log(as6);
+                for (let key1 of as6) {
+                    key1.className = "";
+                    key.className = "active3";
+                }
+            }
+        }
+
+        // 第六层排序动态添加class类
+        let as7 = document.querySelectorAll(".body2_sort a");
+        // console.log(as7);
+        for (let key of as7) {
+            key.onclick = () => {
+                let as8 = document.querySelectorAll(".body2_sort a");
+                // console.log(as8);
+                for (let key1 of as8) {
+                    key1.className = "";
+                    key.className = "active4";
+                }
+            }
+        }
+
+        // 第六层分页按钮动态添加class类名
+        let as9 = document.querySelectorAll(".lastbody .number");
+        // console.log(as9);
+        for (let key of as9) {
+            key.onclick = () => {
+                let as10 = document.querySelectorAll(".lastbody .number");
+                // console.log(as10);
+                for (let key1 of as10) {
+                    key1.className = "number";
+                    key.className = "active5 number";
+                }
+            }
+        }
+
+        // 第六层分页按钮显示隐藏
+
+        // 底部电梯导航!
+        function gotoTop(minHeight){
+ 
+        // 定义点击返回顶部图标后向上滚动的动画
+        $("#gotoTop").click(
+            function(){$('html,body').animate({scrollTop:'0px'},'slow');
+        })
+
+        // 获取页面的最小高度，无传入值则默认为600像素
+        minHeight? minHeight = minHeight:minHeight = 600;
+
+        // 为窗口的scroll事件绑定处理函数
+        $(window).scroll(function(){
+
+            // 获取窗口的滚动条的垂直滚动距离
+            var s = $(window).scrollTop();
+
+            // 当窗口的滚动条的垂直距离大于页面的最小高度时，让返回顶部图标渐现，否则渐隐
+            if( s > 1){
+                $("#gotoTop").fadeIn(500);
+            }else{
+                $("#gotoTop").fadeOut(500);
+            };
+        });
+        };
+        gotoTop();
+    </script>
+</body>
+
+</html>
